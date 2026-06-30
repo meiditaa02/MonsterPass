@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MonsterPass</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind custom config: extend palette with named HSL tokens -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // Dusty purple — monster/heading accents (sat 30%)
+              'dusty-purple': 'hsl(270, 30%, 55%)',
+              'dusty-purple-dark': 'hsl(270, 25%, 35%)',
+              'dusty-purple-light': 'hsl(270, 20%, 92%)',
+              'dusty-purple-border': 'hsl(270, 20%, 75%)',
+              // Sage green — strong/positive states (sat 25%)
+              'sage-green': 'hsl(140, 25%, 55%)',
+              'sage-green-bg': 'hsl(140, 20%, 92%)',
+              // Warm beige — background/neutral (sat 30%)
+              'warm-beige': 'hsl(40, 30%, 80%)',
+              'warm-beige-bg': 'hsl(40, 30%, 94%)',
+              'warm-beige-card': 'hsl(40, 25%, 97%)',
+              // Soft coral — scared/alert states (sat 40%)
+              'soft-coral': 'hsl(10, 40%, 65%)',
+              'soft-coral-bg': 'hsl(10, 30%, 93%)',
+              // Muted text
+              'muted-text': 'hsl(270, 15%, 45%)',
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <!-- Warm beige background, full viewport height, centered content -->
+  <body class="min-h-screen flex items-center justify-center bg-warm-beige-bg px-4 py-8">
+
+    <!-- Card container — responsive from 320px to 1440px, no horizontal scroll -->
+    <main class="flex flex-col items-center gap-6 w-full max-w-sm
+                 bg-warm-beige-card rounded-2xl shadow-md
+                 px-6 py-10 sm:px-8">
+
+      <!-- Page heading -->
+      <h1 class="text-2xl font-bold tracking-tight text-dusty-purple-dark">
+        MonsterPass
+      </h1>
+
+      <!-- Monster Display — size driven by .monster--* classes in style.css -->
+      <div
+        id="monster"
+        class="monster monster--godlike
+               flex items-center justify-center rounded-full
+               bg-dusty-purple-light border-2 border-dusty-purple"
+        aria-hidden="true"
+      >
+        <span id="monster-face" class="monster-face select-none leading-none">😈</span>
+      </div>
+
+      <!-- Reactive Message -->
+      <p
+        id="monster-message"
+        role="status"
+        class="text-center text-dusty-purple-dark font-medium text-sm min-h-[2.5rem] px-2"
+      ></p>
+
+      <!-- Password Input Area -->
+      <div class="input-wrapper flex flex-col gap-2 w-full">
+        <!-- Visible label (req 7.1) -->
+        <label
+          for="password-input"
+          class="text-sm font-semibold text-dusty-purple-dark"
+        >Password</label>
+
+        <div class="flex items-center gap-2">
+          <input
+            id="password-input"
+            type="password"
+            maxlength="128"
+            autocomplete="new-password"
+            placeholder="Enter your password…"
+            class="flex-1 min-w-0 rounded-lg border border-dusty-purple-border
+                   bg-white px-4 py-2 text-sm
+                   text-[hsl(270,20%,25%)] placeholder:text-[hsl(270,15%,70%)]
+                   focus:outline-none focus:ring-2 focus:ring-dusty-purple"
+          />
+          <button
+            id="toggle-btn"
+            type="button"
+            aria-label="Show password"
+            class="flex-shrink-0 rounded-lg border border-dusty-purple-border
+                   bg-white px-3 py-2 text-lg leading-none
+                   hover:bg-dusty-purple-light
+                   focus:outline-none focus:ring-2 focus:ring-dusty-purple
+                   transition-colors duration-150"
+          >👁</button>
+        </div>
+      </div>
+
+      <!-- Strength hint bar (visual only, decorative) -->
+      <p class="text-xs text-muted-text text-center">
+        Mix uppercase, lowercase, numbers &amp; symbols for a stronger password.
+      </p>
+
+      <!-- ARIA Live Region — visually hidden, announces level to screen readers -->
+      <div id="strength-live" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

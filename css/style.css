@@ -1,0 +1,56 @@
+/* Monster shared transition */
+.monster {
+  transition: all 400ms ease-in-out;
+}
+
+/* Monster size states — strictly decreasing per requirement 3.2 */
+.monster--godlike  { width: 120px; height: 120px; }
+.monster--strong   { width: 96px;  height: 96px;  }
+.monster--annoyed  { width: 72px;  height: 72px;  }
+.monster--scared   { width: 52px;  height: 52px;  }
+.monster--defeated { width: 36px;  height: 36px;  }
+
+/* Per-state color accents (all HSL saturation ≤ 60%) */
+/* Godlike — dusty purple */
+.monster--godlike {
+  background-color: hsl(270, 20%, 92%);
+  border-color: hsl(270, 30%, 55%);
+}
+
+/* Strong — sage green */
+.monster--strong {
+  background-color: hsl(140, 20%, 92%);
+  border-color: hsl(140, 25%, 55%);
+}
+
+/* Annoyed — warm beige/amber */
+.monster--annoyed {
+  background-color: hsl(40, 30%, 90%);
+  border-color: hsl(40, 30%, 55%);
+}
+
+/* Scared — soft coral */
+.monster--scared {
+  background-color: hsl(10, 30%, 93%);
+  border-color: hsl(10, 40%, 65%);
+}
+
+/* Defeated — muted grey (sat 10%) */
+.monster--defeated {
+  background-color: hsl(270, 10%, 93%);
+  border-color: hsl(270, 10%, 65%);
+}
+
+/* Monster emoji scales with state size */
+.monster--godlike  .monster-face { font-size: 3.5rem; }
+.monster--strong   .monster-face { font-size: 2.75rem; }
+.monster--annoyed  .monster-face { font-size: 2rem; }
+.monster--scared   .monster-face { font-size: 1.4rem; }
+.monster--defeated .monster-face { font-size: 1rem; }
+
+/* Respect reduced-motion preference: make transitions instant */
+@media (prefers-reduced-motion: reduce) {
+  .monster {
+    transition: none;
+  }
+}

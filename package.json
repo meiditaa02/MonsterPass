@@ -1,0 +1,28 @@
+{
+  "name": "monsterpass",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meiditaa02/MonsterPass.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meiditaa02/MonsterPass/issues"
+  },
+  "homepage": "https://github.com/meiditaa02/MonsterPass#readme",
+  "description": "",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.1.9",
+    "fast-check": "^4.8.0",
+    "jsdom": "^29.1.1",
+    "vitest": "^4.1.9"
+  }
+}
