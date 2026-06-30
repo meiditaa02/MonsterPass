@@ -59,7 +59,7 @@ MonsterPass/
 
 4. **Coba ketik password apa saja** dan lihat reaksi monsternya berubah secara langsung! 🎮
 
-## 🧪 Menjalankan Test (opsional)
+## 🧪 Menjalankan Test
 
 Jika ingin menjalankan unit test:
 
