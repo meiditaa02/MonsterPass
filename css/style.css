@@ -54,3 +54,9 @@
     transition: none;
   }
 }
+
+/* Subtle dot pattern on body background */
+body {
+  background-image: radial-gradient(hsl(270, 20%, 85%) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
