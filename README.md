@@ -1,6 +1,6 @@
 # 👹 MonsterPass
 
-Aplikasi web sederhana untuk mengecek kekuatan password kamu — tapi dengan cara yang lebih seru! Setiap kali kamu mengetik password, seekor monster lucu nan menyeramkan akan muncul dan bereaksi secara langsung. Semakin kuat password yang kamu buat, semakin lemah dan menyedihkan monsternya jadi.
+Aplikasi web sederhana untuk mengecek kekuatan password dengan cara yang lebih seru! Setiap kali kamu mengetik password, seekor monster lucu nan menyeramkan akan muncul dan bereaksi secara langsung. Semakin kuat password yang kamu buat, semakin lemah dan menyedihkan monsternya.
 
 ## ✨ Fitur
 
@@ -13,12 +13,11 @@ Aplikasi web sederhana untuk mengecek kekuatan password kamu — tapi dengan car
   - 😵 **Defeated** — password sangat kuat, monster kecil, menangis, dan kalah total
 - Pesan-pesan lucu dan sarkastik dari monster di setiap level
 - Tombol show/hide untuk menampilkan atau menyembunyikan password
-- Desain minimalis dengan palet warna soft (tidak norak)
 
 ## 🛠️ Tech Stack
 
 - **HTML5** — struktur halaman
-- **Tailwind CSS** — styling (via CDN)
+- **Tailwind CSS** — styling 
 - **Vanilla JavaScript** — logika dan interaktivitas
 
 ## 📂 Struktur Project
